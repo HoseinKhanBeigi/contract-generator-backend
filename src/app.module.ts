@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
-import { BookmarkModule } from './bookmark/bookmark.module';
+import { ContractController } from './contract/contract.controller';
+import { ContractService } from './contract/contract.service';
 
 @Module({
-  imports: [AuthModule, UserModule, BookmarkModule],
+  imports: [UserModule],
+  controllers: [ContractController],
+  providers: [ContractService],
 })
 export class AppModule {}
